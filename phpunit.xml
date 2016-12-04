@@ -6,7 +6,8 @@
     convertWarningsToExceptions="true"
     processIsolation="false"
     stopOnFailure="false"
-    syntaxCheck="true">
+    syntaxCheck="true"
+    bootstrap="./test-bootstrap.php">
     <testsuites>
         <testsuite name="Test suite">
             <directory>./test/</directory>
