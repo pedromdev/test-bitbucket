@@ -11,7 +11,7 @@ class Math
 
     public static function factorial($i)
     {
-        if ($i == 1) {
+        if ($i == 1 || $i == 0) {
             return 1;
         } else {
             return $i * self::factorial($i - 1);
