@@ -13,4 +13,9 @@ class MathTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(120, Math::factorial(5));
     }
+
+    public function test0Factorial()
+    {
+        $this->assertEquals(1, Math::factorial(0));
+    }
 }
