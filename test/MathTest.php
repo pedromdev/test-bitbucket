@@ -18,4 +18,13 @@ class MathTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(1, Math::factorial(0));
     }
+    
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage Factorial of -1 does not exist
+    */
+    public function testNegativeNumbersInFactorial()
+    {
+        Math::factorial(-1);
+    }
 }
