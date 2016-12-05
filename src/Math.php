@@ -11,6 +11,9 @@ class Math
 
     public static function factorial($i)
     {
+        if ($i < 0) {
+            throw new \InvalidArgumentException("Factorial of $i does not exist");
+        }
         if ($i == 1 || $i == 0) {
             return 1;
         } else {
