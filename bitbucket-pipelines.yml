@@ -10,8 +10,16 @@ pipelines:
     dev:
       - step:
           script:
-            - echo $SSH_PRIVATE_KEY
-            - ls -la ~/.ssh
+            - apt-get update
+            - apt-get install openssh-client git -y
+            - ssh-keyscan -t rsa github.com > my_known_hosts
+            - mkdir -p ~/.ssh
+            - cat my_known_hosts >> ~/.ssh/known_hosts
+            - (umask  077 ; echo $SSH_PRIVATE_KEY | base64 --decode > ~/.ssh/id_rsa)
+            - git config --global user.email "pedromarcelodesaalves@gmail.com"
+            - git config --global user.name "Bitbucket"
+            - git remote add origin git@github.com:pedromdev/test-bitbucket.git
+            - git push origin master
     master:
       - step:
           script: # Modify the commands below to build your repository.
