@@ -19,6 +19,7 @@ pipelines:
             - git config --global user.email "pedromarcelodesaalves@gmail.com"
             - git config --global user.name "Bitbucket"
             - git remote add test git@github.com:pedromdev/test-bitbucket.git
+            - git pull test master
             - git push test master
     master:
       - step:
