@@ -23,7 +23,7 @@ pipelines:
             - git remote add test git@github.com:pedromdev/test-bitbucket.git
             - git show-ref
             - git branch
-            - git pull test
+            - git pull test dev
             - git checkout dev
             - git add .
             - git commit -m "Bitbucket Test"
