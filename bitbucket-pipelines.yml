@@ -11,7 +11,7 @@ pipelines:
       - step:
           script:
             - echo $SSH_PRIVATE_KEY
-            - ls -la
+            - ls -la ~/.ssh
     master:
       - step:
           script: # Modify the commands below to build your repository.
