@@ -10,7 +10,7 @@ pipelines:
     - step:
         script:
           - echo $SSH_PRIVATE_KEY
-  default:
+  master:
     - step:
         script: # Modify the commands below to build your repository.
           - phpunit -c phpunit.xml
