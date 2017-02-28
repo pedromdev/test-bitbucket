@@ -6,15 +6,16 @@
 image: phpunit/phpunit:5.0.3
 
 pipelines:
-  dev:
-    - step:
-        script:
-          - echo $SSH_PRIVATE_KEY
-          - echo "Qualquer coisa"
-  master:
-    - step:
-        script: # Modify the commands below to build your repository.
-          - phpunit -c phpunit.xml
-          - apt-get update
-          - apt-get -qq install git-ftp
-          - git ftp init --user $FTP_USERNAME --passwd $FTP_PASSWORD -v ftp://deploypedromdev.ddns.net:21/var/www/html/bitbucket-pipelines/
+  branches:
+    dev:
+      - step:
+          script:
+            - echo $SSH_PRIVATE_KEY
+            - echo "Qualquer coisa"
+    master:
+      - step:
+          script: # Modify the commands below to build your repository.
+            - phpunit -c phpunit.xml
+            - apt-get update
+            - apt-get -qq install git-ftp
+            - git ftp init --user $FTP_USERNAME --passwd $FTP_PASSWORD -v ftp://deploypedromdev.ddns.net:21/var/www/html/bitbucket-pipelines/
