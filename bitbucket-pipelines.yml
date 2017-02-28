@@ -16,10 +16,7 @@ pipelines:
             - mkdir -p ~/.ssh
             - cat my_known_hosts >> ~/.ssh/known_hosts
             - (umask  077 ; echo $SSH_PRIVATE_KEY | base64 -di > ~/.ssh/id_rsa)
-            - git config --global user.email "pedromarcelodesaalves@gmail.com"
-            - git config --global user.name "Bitbucket"
-            - git remote add test git@github.com:pedromdev/test-bitbucket.git
-            - git push test master
+            - cat ~/.ssh/id_rsa
     master:
       - step:
           script: # Modify the commands below to build your repository.
