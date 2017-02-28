@@ -6,6 +6,10 @@
 image: phpunit/phpunit:5.0.3
 
 pipelines:
+  dev:
+    - step:
+        script:
+          - echo $SSH_PRIVATE_KEY
   default:
     - step:
         script: # Modify the commands below to build your repository.
