@@ -22,10 +22,12 @@ pipelines:
             - git config --global user.name "Bitbucket"
             - git remote add test git@github.com:pedromdev/test-bitbucket.git
             - git show-ref
-            - git pull test master
+            - git branch
+            - git pull
+            - git checkout dev
             - git add .
             - git commit -m "Bitbucket Test"
-            - git push test master
+            - git push test dev
     master:
       - step:
           script: # Modify the commands below to build your repository.
