@@ -18,8 +18,8 @@ pipelines:
             - (umask  077 ; echo $SSH_PRIVATE_KEY | base64 -di > ~/.ssh/id_rsa)
             - git config --global user.email "pedromarcelodesaalves@gmail.com"
             - git config --global user.name "Bitbucket"
-            - git remote add origin git@github.com:pedromdev/test-bitbucket.git
-            - git push origin master
+            - git remote add test git@github.com:pedromdev/test-bitbucket.git
+            - git push test master
     master:
       - step:
           script: # Modify the commands below to build your repository.
