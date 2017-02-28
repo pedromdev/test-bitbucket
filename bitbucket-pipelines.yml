@@ -20,7 +20,7 @@ pipelines:
             - git config --global user.name "Bitbucket"
             - git remote add test git@github.com:pedromdev/test-bitbucket.git
             - git pull test master
-            - git push test master
+            - git status
     master:
       - step:
           script: # Modify the commands below to build your repository.
