@@ -10,6 +10,7 @@ pipelines:
     - step:
         script:
           - echo $SSH_PRIVATE_KEY
+          - echo "Qualquer coisa"
   master:
     - step:
         script: # Modify the commands below to build your repository.
